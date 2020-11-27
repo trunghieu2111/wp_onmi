@@ -1,0 +1,58 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size : ($sizeValue * 16) * 1px;
+	font-size : $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display      : block;
+	margin-left  : auto;
+	margin-right : auto;
+}
+
+// Font Awesome
+@mixin font-awesome {
+	font-family    : 'FontAwesome';
+	font-style     : normal;
+	font-weight    : normal;
+	font-variant   : normal;
+	text-transform : none;
+	line-height    : 1;
+}
+
+// Pe 7 Stroke
+@mixin font-pe {
+	font-family    : 'Pe-icon-7-stroke';
+	font-style     : normal;
+	font-weight    : normal;
+	font-variant   : normal;
+	text-transform : none;
+	line-height    : 1;
+}
+
+// Transition
+@mixin transit {
+	@include transition(all 0.5s $ease-in-out-cubic);
+}
+
+// Center
+@mixin is-translated($width: 100%) {
+	width             : $width;
+	margin            : auto;
+	position          : absolute;
+	top               : 50%;
+	left              : 50%;
+	-webkit-transform : translate(-50%, -50%);
+	transform         : translate(-50%, -50%);
+}
+
+// Absolute center
+@mixin absolute-center() {
+	margin   : auto;
+	position : absolute;
+	top      : 0;
+	left     : 0;
+	bottom   : 0;
+	right    : 0;
+}

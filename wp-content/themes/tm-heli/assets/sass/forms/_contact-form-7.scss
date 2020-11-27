@@ -1,0 +1,49 @@
+.wpcf7-form {
+	.row {
+		margin: 0 -5px;
+	}
+	[class*='col-'] {
+		padding: 0 5px;
+	}
+	textarea {
+		height: 110px;
+	}
+}
+
+.wpcf7-form {
+	select,
+	textarea,
+	input {
+		margin-bottom: 15px;
+		border: 1px solid #ddd;
+		background-color: transparent;
+		color: #222;
+		@include placeholder {
+			color: #444;
+			letter-spacing: .05em;
+		}
+	}
+	.wpcf7-submit {
+		padding: 12px 30px;
+		border-color: #888;
+		border-radius: 40px;
+		letter-spacing: .2em;
+		&:hover {
+			background-color: #222;
+			color: #fff;
+		}
+	}
+}
+
+.black .wpcf7-form {
+	select,
+	textarea,
+	input {
+		border-color: #444;
+		color: #fff;
+		@include placeholder {
+			color: #fff;
+		}
+	;
+	}
+}

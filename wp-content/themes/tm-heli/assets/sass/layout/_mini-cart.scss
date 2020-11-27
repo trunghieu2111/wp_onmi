@@ -1,0 +1,137 @@
+.mini-cart {
+	position: relative;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	.mini-cart__button {
+		@extend %transit;
+		cursor: pointer;
+		.mini-cart-icon {
+			position: relative;
+			&:before {
+				@extend %pes;
+				float: none;
+				margin: 0;
+				width: auto;
+				height: auto;
+				border: 0;
+				content: "\e615";
+				font-size: 20px;
+				line-height: normal;
+			}
+			&:after {
+				position: absolute;
+				top: -9px;
+				right: -6px;
+				min-width: 17px;
+				border-radius: 100%;
+				color: #fff;
+				content: attr(data-count);
+				text-align: center;
+				font-size: 11px;
+				font-family: inherit;
+				line-height: 17px;
+			}
+		}
+	}
+}
+
+.mini-cart {
+	.widget_shopping_cart_content {
+		@extend %transit;
+		position: absolute;
+		top: 140%;
+		right: 0;
+		z-index: 99999;
+		visibility: hidden;
+		overflow: auto;
+		padding-top: 21px;
+		max-height: 700px;
+		width: 300px;
+		background-color: #fff;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+		opacity: 0;
+		.cart_list {
+			li {
+				@extend %clearfix;
+				margin-bottom: 10px;
+				padding: 0 15px 10px;
+				border-bottom: 1px solid #eee;
+				&.empty {
+					border: 0;
+				}
+				img {
+					float: left;
+					margin: 0 10px 0 0;
+					width: 70px;
+				}
+				.quantity {
+					display: block;
+					color: #666;
+					font-size: 12px;
+				}
+				.remove {
+					position: relative;
+					display: inline-block;
+					float: right;
+					width: 20px;
+					height: 20px;
+					border-radius: 100%;
+					text-align: center;
+					font-size: 20px;
+					line-height: 20px;
+					&:hover {
+						background: #222;
+						color: #fff !important;
+					}
+				}
+			}
+		}
+		.total {
+			margin-bottom: 0;
+			padding: 5px 15px;
+			text-align: center;
+			text-transform: uppercase;
+			strong {
+				font-weight: 400;
+			}
+		}
+		.buttons {
+			margin-top: 10px;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		.wc-forward {
+			display: inline-block;
+			margin: 0 5px;
+			padding: 7px 20px;
+			border: 1px solid #1f1f1f;
+			border-radius: 30px;
+			background-color: transparent;
+			color: #1f1f1f;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			font-weight: 400;
+			font-size: 12px;
+			&:hover {
+				background-color: #222;
+				color: #fff;
+			}
+		}
+	}
+	&.open {
+		.widget_shopping_cart_content {
+			top: 100%;
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+.mini_cart_item {
+	a {
+		text-transform: uppercase;
+		font-weight: normal !important;
+	}
+}

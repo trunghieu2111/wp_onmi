@@ -1,0 +1,64 @@
+$reserved-grid-breakpoints: (
+  xs: 20em,
+  // Small screen / phone / 768px
+  sm: 48em,
+  // Medium screen / tablet / 1024px
+  md: 64em,
+  // Large screen / desktop / 1280px
+  lg: 80em,
+  // Extra large screen / wide desktop / 1920px
+  xl: 120em
+);
+
+@each $breakpoint in map-keys($reserved-grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    @each $position in (top,right,bottom,left) {
+      @for $i from 0 through 20 {
+        $step: $i * 10;
+
+        body .margin-#{$position}-#{$breakpoint}-#{$step} {
+          margin-#{$position}: #{$step}px !important;
+        }
+
+        body .padding-#{$position}-#{$breakpoint}-#{$step} {
+          padding-#{$position}: #{$step}px !important;;
+        }
+      }
+    }
+  }
+}
+
+@for $i from 1 through 50 {
+  .z-index-#{$i} {
+    z-index: #{$i};
+  }
+}
+
+@for $i from 0 through 10 {
+	$step: $i * 100;
+	.delay-#{$step} {
+		animation-delay: #{$step}ms;
+	}
+}
+
+@each $float in (left, right) {
+  .float-#{$float} {
+    float: #{$float};
+  }
+}
+
+.clear-both {
+  clear: both;
+}
+
+@each $align in (left, center, right) {
+  .text-align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+@for $i from 10 through 50 {
+  .font-size-#{$i} {
+    font-size: #{$i}px;
+  }
+}

@@ -1,0 +1,25 @@
+.btn {
+	@include transition(all .01s $ease-in-out-cubic);
+	display: inline-block;
+	padding: 5px 0 2px;
+	border-bottom: 1px solid #444;
+	letter-spacing: .3rem;
+	font-weight: 400;
+	font-size: 12px;
+	&:before {
+		@include transition(all .3s $ease-in-out-cubic);
+		display: inline-block;
+		margin-left: -35px;
+		padding-right: 5px;
+		content: inline('arrow.svg');
+		vertical-align: middle;
+		opacity: 0;
+	}
+	&:hover {
+		border-color: transparent;
+		&:before {
+			margin-left: 0;
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+a {
+	@extend %transit;
+}
+
+#map-canvas img {
+	max-width : none; // fix google map
+}
+
+.clear,
+.entry-content,
+.comment-content,
+.site-content,
+.site-footer {
+	@extend %clearfix;
+}
+.overflow{
+	overflow : hidden;
+}
+h3,h4,h5,h6{
+	font-weight : normal !important;
+}
